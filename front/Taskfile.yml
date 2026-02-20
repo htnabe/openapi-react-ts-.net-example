@@ -1,0 +1,27 @@
+version: '3'
+
+tasks:
+  dev:
+    desc: フロントエンド開発サーバーを起動する (Vite)
+    cmds:
+      - npm run dev
+
+  build:
+    desc: フロントエンドをビルドする
+    cmds:
+      - npm run build
+
+  install:
+    desc: npm パッケージをインストールする
+    cmds:
+      - npm install --legacy-peer-deps
+
+  update:
+    desc: npm パッケージを最新版に更新する
+    cmds:
+      - npm run update
+
+  gen:client:
+    desc: OpenAPI クライアントコードを生成する
+    cmds:
+      - npm run gen:client

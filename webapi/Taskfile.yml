@@ -1,0 +1,21 @@
+version: '3'
+
+env:
+  PATH:
+    sh: echo "/home/vscode/.dotnet:$PATH"
+
+tasks:
+  dev:
+    desc: バックエンド開発サーバーを起動する (dotnet watch)
+    cmds:
+      - dotnet watch run
+
+  build:
+    desc: バックエンドをビルドする
+    cmds:
+      - dotnet build
+
+  publish:
+    desc: バックエンドを発行する
+    cmds:
+      - dotnet publish

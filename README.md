@@ -11,6 +11,36 @@ git clone https://github.com/htnabe/OpenAPI-React-TypeScript-.NET-Example.git
 > [!IMPORTANT]
 > `devcontainer` is available. If you failed to start the project by the following way, you can use this.
 
+#### Using Task (recommended)
+
+Install [go-task](https://taskfile.dev/installation/) if not already installed:
+```
+brew install go-task/tap/go-task
+```
+
+Start both frontend and backend simultaneously:
+```
+task
+```
+
+Or start each separately:
+```
+task front:dev   # Vite dev server
+task back:dev    # dotnet watch
+```
+
+Available tasks:
+| Command | Description |
+|---|---|
+| `task` | Start frontend + backend simultaneously |
+| `task front:dev` | Start Vite dev server only |
+| `task back:dev` | Start dotnet watch only |
+| `task front:install` | Install npm packages |
+| `task front:build` | Build frontend |
+| `task back:build` | Build backend |
+
+#### Manual
+
 - Web API Server
 ```
 cd webapi
@@ -21,8 +51,8 @@ dotnet watch run
 - Web App
 ```
 cd front
-yarn install
-yarn run dev
+npm install
+npm run dev
 ```
 
 Then,
