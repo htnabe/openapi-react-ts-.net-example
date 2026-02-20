@@ -16,6 +16,5 @@ includes:
 tasks:
   default:
     desc: フロントとバックエンドを同時に起動する
-    deps:
-      - front:dev
-      - back:dev
+    cmds:
+      - task front:dev & task back:dev
