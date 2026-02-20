@@ -1,0 +1,20 @@
+version: '3'
+
+env:
+  DOTNET_ROOT: /home/vscode/.dotnet
+  PATH:
+    sh: echo "/home/vscode/.dotnet:$PATH"
+
+includes:
+  front:
+    taskfile: ./front/Taskfile.yml
+    dir: ./front
+  back:
+    taskfile: ./webapi/Taskfile.yml
+    dir: ./webapi
+
+tasks:
+  default:
+    desc: フロントとバックエンドを同時に起動する
+    cmds:
+      - task front:dev & task back:dev
